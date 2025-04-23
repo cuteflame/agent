@@ -1,14 +1,8 @@
-# LLM-MCP-RAG 实验项目
-
-> 本项目是基于 [KelvinQiu802/llm-mcp-rag](https://github.com/KelvinQiu802/llm-mcp-rag) 的 Python 实现版本，用于学习和实践 LLM、MCP 和 RAG 技术。
->
-> 该项目作者有演示视频 见 https://www.bilibili.com/video/BV1dcRqYuECf/
->
-> 强烈建议先浏览其README, 本仓库对一些逻辑进行了微调和命名调整!
+# LLM-MCP-RAG AGRENT项目
 
 ## 项目简介
 
-本项目是一个基于大语言模型（LLM）、模型上下文协议（MCP）和检索增强生成（RAG）的实验性项目。它展示了如何构建一个能够与外部工具交互并利用检索增强生成技术的 AI 助手系统。
+本项目是一个基于大语言模型（LLM）、模型上下文协议（MCP）和检索增强生成（RAG）的项目。它展示了如何构建一个能够与外部工具交互并利用检索增强生成技术的 AI 助手系统。
 
 ### 核心功能
 
@@ -112,21 +106,6 @@ classDiagram
    - `USE_CN_MIRROR`: (可选) 是否使用中国镜像, 设置任意值(如'1')为 true (默认为 false)
    - `PROXY_URL`: (可选) 代理 URL (如 "http(s)://xxx"), 用于 `fetch` (mcp-tool) 走代理
 
-### 安装依赖
-
-```bash
-# 使用 uv 安装依赖
-uv sync
-```
-
-### 运行示例
-
-本项目使用 `just` 命令工具来运行不同的示例：
-
-```bash
-# 查看可用命令
-just help
-```
 
 ## RAG 示例流程
 
@@ -158,18 +137,13 @@ sequenceDiagram
 
 ## 项目结构
 
-- `src/augmented/`: 主要源代码目录
   - `agent.py`: Agent 实现，负责协调 LLM 和工具
-  - `chat_openai.py`: OpenAI API 客户端封装
-  - `mcp_client.py`: MCP 客户端实现
+  - `LLM.py`: OpenAI API 客户端封装
+  - `McpClient.py`: MCP 客户端实现
   - `embedding_retriever.py`: 嵌入检索器实现
   - `vector_store.py`: 向量存储实现
-  - `mcp_tools.py`: MCP 工具定义
   - `utils/`: 工具函数
-    - `info.py`: 项目信息和配置
-    - `pretty.py`: 统一日志输出系统
-- `rag_example.py`: RAG 示例程序
-- `justfile`: 任务运行配置文件
+    
 
 ## 学习资源
 
